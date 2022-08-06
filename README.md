@@ -94,7 +94,7 @@ $ curl --location --request POST 'http://localhost:8090/users/signup' \
 }
 ```
 
-6. Для сохранения сообщения необходимо в запросе добавить header авторизации в котором будет полученный JWT token.
+5. Для сохранения сообщения необходимо в запросе добавить header авторизации в котором будет полученный JWT token.
 ```
 'Authorization: Bearer_<jwt_token>' 
 ```

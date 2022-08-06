@@ -1,0 +1,40 @@
+Для получения токена сделать POST запрос /users/signin:
+
+$ curl --location --request POST 'http://localhost:8090/users/signin' \
+--header 'Content-Type: application/json' \
+--data-raw '{
+    "name": "client",
+    "password": "client"
+}'
+
+
+В случае необходимости можно создать нового пользователя. Пример запроса:
+
+$ curl --location --request POST 'http://localhost:8090/users/signup' \
+--header 'Content-Type: application/json' \
+--data-raw '{
+    "name":"test",
+    "password":"test"
+    }'
+
+
+Пример запроса для сохранения сообщения:
+
+$ curl --location --request POST 'http://localhost:8090/messages/' \
+--header 'Authorization: Bearer_<jwt_token>' \
+--header 'Content-Type: application/json' \
+--data-raw '{
+    "name":"test",
+    "message":"my very nice message"
+    }'
+
+
+Пример запроса для получения 10 последних сообщений:
+
+$ curl --location --request POST 'http://localhost:8090/messages/' \
+--header 'Authorization: Bearer_<jwt_token>' \
+--header 'Content-Type: application/json' \
+--data-raw '{
+    "name":"test",
+    "message":"history 10"
+    }'
